@@ -25,6 +25,7 @@ export default {
     ]),
   },
   mounted(){
+    alert(window.screen.width);
     window.addEventListener("DOMContentLoaded", this.changePageSize);
     window.addEventListener("resize", this.changePageSize);
   },
