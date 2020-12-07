@@ -1,9 +1,13 @@
+@import './desktop.scss';
+@import './mobile.scss';
+@import './fonts.scss';
+
 $page_size: 10px;
 
 body{
+    font-size: $page_size;
     margin: 0;
     padding: 0;
-    font-size: $page_size;
 }
 
 *{

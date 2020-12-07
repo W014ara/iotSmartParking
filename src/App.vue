@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <Header />
-    <Header />
   </div>
 </template>
 
@@ -25,12 +24,14 @@ export default {
       'changePageSize'
     ]),
   },
-
-  created(){
+  mounted(){
+    window.addEventListener("DOMContentLoaded", this.changePageSize);
     window.addEventListener("resize", this.changePageSize);
   },
+
   destroyed() {
-    window.removeEventListener("resize", this.changePageSize);
+    window.removeEventListener("DOMContentLoaded", this.changePageSize);
+    window.addEventListener("resize", this.changePageSize);
   },
 }
 </script>
