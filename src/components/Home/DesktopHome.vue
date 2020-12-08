@@ -70,7 +70,7 @@
     .starterPoint {
       .starterPoint__text {
         position: absolute;
-        top: 14rem;
+        top: 50rem;
         line-height: 145.99%;
       }
     }
