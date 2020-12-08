@@ -1,14 +1,22 @@
 <template>
   <section class="mobile__footer">
-    <div class="startBTN">
-      <h1>ПОЕХАЛИ</h1>
-      <div class="startBTN__symbol"></div>
-    </div>
+    <router-link to="/place">
+      <div class="startBTN">
+        <h1>ПОЕХАЛИ</h1>
+        <div class="startBTN__symbol"></div>
+      </div>
+    </router-link>
   </section>
 </template>
 
 <style lang="scss" scoped>
 .mobile__footer {
+  a {
+    text-decoration: none;
+    &:active {
+      text-decoration: none;
+    }
+  }
   position: fixed;
   width: inherit;
   display: flex;

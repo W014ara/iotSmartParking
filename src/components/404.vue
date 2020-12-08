@@ -1,7 +1,7 @@
 <template>
   <div class="error">
     <div class="content">
-      <img src="../resource/img/404/sad-emoji.svg" alt="" />
+      <img src="../resource/img/404/sad-emoji.svg" alt="" class="smile" />
       <h1>404</h1>
       <hr />
       <h2>Запрашиваемая страница не найдена</h2>
