@@ -9,25 +9,21 @@
 
 <script>
 import Header from "./views/Header.vue";
-import {mapGetters, mapMutations} from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 
 export default {
-  components:{
+  components: {
     Header
   },
 
   computed: {
-   ...mapGetters([
-     "getPageSize"
-     ])
+    ...mapGetters(["getPageSize"])
   },
 
   methods: {
-    ...mapMutations([
-      'changePageSize'
-    ]),
+    ...mapMutations(["changePageSize"])
   },
-  mounted(){
+  mounted() {
     window.addEventListener("DOMContentLoaded", this.changePageSize);
     window.addEventListener("resize", this.changePageSize);
   },
@@ -35,6 +31,6 @@ export default {
   destroyed() {
     window.removeEventListener("DOMContentLoaded", this.changePageSize);
     window.addEventListener("resize", this.changePageSize);
-  },
-}
+  }
+};
 </script>
