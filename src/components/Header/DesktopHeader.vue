@@ -1,6 +1,8 @@
 <template>
-    <div class="content">
-        <img src="../../resource/img/header/desktopLogo.svg" alt="" class="logo">
+    <div class="desktop-content">
+        <router-link :to="{ name: 'home'}">
+            <img src="../../resource/img/header/desktopLogo.svg" alt="" class="logo">
+        </router-link>
         <nav class="navigation">
             <router-link to="/place" class="place">
                 Свободные места
@@ -13,37 +15,30 @@
 </template>
 
 <style lang="scss" scoped>
-    .content{
-        position: fixed;
-        display:flex;
+    .desktop-content{
+        display: flex;
         flex-direction: row;
+        justify-content: space-evenly;
         flex-wrap: nowrap;
-        width: 100%;
-        height: 8rem;
         background: url("../../resource/img/header/desktopBackground.png") no-repeat;
-        background-size: contain;
-        .logo{
-            margin-left: 9rem;
-            width: 42rem;
-            height: 8rem;
-        }
+        background-size: cover;
         .navigation{
             margin-top: 3rem;
-            margin-left: 72rem;
-            width: 34rem;
-            height: 2rem;
+            margin-left: 12rem;
             display: flex;
             flex-direction: row;
             justify-content: space-around;
+            flex-wrap: nowrap;
+            font-family: DroidSans;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1.8rem;
+            line-height: 69.49%;
             a{
-                font-family: DroidSans;
-                font-style: normal;
-                font-weight: normal;
-                font-size: 1.5rem;
-                line-height: 69.49%;
+                height: 2rem;
+                color:white;
                 text-decoration: none;
-                color: white;
-                transition: .2s;
+                transition: .1s;
                 &:active{
                     color:white;
                 }
@@ -52,5 +47,75 @@
                 }
             }
         }
+    }
+    @media (min-width: 1024px) and (max-width: 1279px) {
+        .desktop-content{
+            .logo{
+                width: 42rem;
+                height: 9rem;
+            }
+            .navigation{
+                width: 40rem;
+            }
+        }
+    }
+
+    @media (min-width: 1280px) and (max-width: 1649px) {
+        .desktop-content{
+            .logo{
+                width: 42rem;
+                height: 9rem;
+            }
+            .navigation{
+                width: 50rem;
+            }
+        }
+    }
+
+    @media (min-width: 1650px) and (max-width: 1800px) {
+        .desktop-content{
+            .logo{
+                width: 42rem;
+                height: 9rem;
+            }
+            .navigation{
+                width: 47rem;
+                margin-top: 5rem;
+                margin-left: 66rem;
+            }
+        }
+    }
+
+    @media (min-width: 1801px) and (max-width: 2500px) {
+        .desktop-content{
+            .logo{
+                width: 42rem;
+                height: 9rem;
+            }
+            .navigation{
+                width: 47rem;
+                margin-top: 4rem;
+                margin-left: 76rem;
+            }
+        }
+    }
+
+    @media (min-width: 2501px) and (max-width: 3799px) {
+        .desktop-content{
+            .logo{
+                width: 42rem;
+                height: 9rem;
+            }
+            .navigation{
+                font-size: 2rem;
+                width: 47rem;
+                margin-top: 4rem;
+                margin-left: 140rem;
+            }
+        }
+    }
+
+    @media (min-width: 3800px){
+
     }
 </style>

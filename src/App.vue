@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <Header />
+    <div class="app__content">
+      <Header />
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -25,7 +28,6 @@ export default {
     ]),
   },
   mounted(){
-    alert(window.screen.width);
     window.addEventListener("DOMContentLoaded", this.changePageSize);
     window.addEventListener("resize", this.changePageSize);
   },
@@ -36,7 +38,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss">
-  @import url("./styles/loader.scss");
-</style>
