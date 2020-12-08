@@ -22,10 +22,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .app__main{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background:#0392A6;
-  }
+.app__main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #0392a6;
+}
 </style>

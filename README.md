@@ -12,12 +12,12 @@ npm start
 
 ### Compiles and minifies for production
 ```
-npm build
+npm run build
 ```
 
 ### Lints and fixes files
 ```
-npm lint
+npm run lint
 ```
 
 ### Customize configuration
