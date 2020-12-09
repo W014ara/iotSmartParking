@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer class="app__footer">
     <MobileFooter v-if="this.getPageSize === 'mobile'" />
     <DesktopFooter v-else />
   </footer>
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-footer {
+.app__footer {
   width: 100%;
   z-index: 999;
 }

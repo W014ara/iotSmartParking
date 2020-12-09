@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="app__header">
     <MobileHeader v-if="this.getPageSize === 'mobile'" />
     <DesktopHeader v-else />
   </header>
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-header {
+.app__header {
   z-index: 999;
   background: #0392a6;
 }

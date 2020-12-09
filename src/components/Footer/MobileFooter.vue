@@ -1,6 +1,6 @@
 <template>
   <section class="mobile__footer">
-    <router-link to="/place">
+    <router-link :to="{ name: 'place' }">
       <div class="startBTN">
         <h1>ПОЕХАЛИ</h1>
         <div class="startBTN__symbol"></div>

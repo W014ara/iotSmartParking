@@ -8,10 +8,10 @@
       />
     </router-link>
     <nav class="navigation">
-      <router-link to="/place" class="place">
+      <router-link :to="{ name: 'place' }" class="place">
         Свободные места
       </router-link>
-      <router-link to="/status" class="status">
+      <router-link :to="{ name: 'status' }" class="status">
         Статус бронирования
       </router-link>
     </nav>
