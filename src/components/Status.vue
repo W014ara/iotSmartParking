@@ -42,12 +42,13 @@ export default {
     ...mapGetters(["getPageSize", "getReservedPlaceID"])
   },
   methods: {
-    ...mapMutations(["updatePlaces"]),
+    ...mapMutations(["updatePlaces", "setReserved"]),
     ...mapActions(["fetchupdatePlaces"]),
     cancelActions: function() {
       let dataobj = [this.getReservedPlaceID, false, false];
       this.fetchupdatePlaces(dataobj);
       this.updatePlaces(dataobj);
+      this.setReserved(null);
     }
   }
 };

@@ -11,7 +11,7 @@
 <script>
 import Header from "./views/Header";
 import Footer from "./views/Footer";
-import { mapGetters, mapMutations } from "vuex";
+import { mapGetters, mapMutations, mapActions } from "vuex";
 
 export default {
   components: {
@@ -20,12 +20,27 @@ export default {
   },
 
   computed: {
-    ...mapGetters(["getPageSize"])
+    ...mapGetters(["getPageSize", "getReservedPlaceID", "getPlaces"])
   },
 
   methods: {
-    ...mapMutations(["changePageSize"])
+    ...mapMutations(["changePageSize", "setReserved"]),
+    ...mapActions(["fetchPlaces"])
   },
+  created(){
+    setInterval(() => {
+      this.fetchPlaces()
+      console.log(this.getReservedPlaceID);
+      if(this.getReservedPlaceID !== null){
+        for(let elem of this.getPlaces){
+          if((+elem.id === +this.getReservedPlaceID) && (elem["occupied"] === false)){
+            this.setReserved()
+          }
+        }
+      }
+    }, 1000);
+  },
+
   mounted() {
     window.addEventListener("DOMContentLoaded", this.changePageSize);
     window.addEventListener("resize", this.changePageSize);

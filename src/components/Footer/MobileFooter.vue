@@ -58,12 +58,13 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(["setNewUrl", "updatePlaces"]),
+    ...mapMutations(["setNewUrl", "updatePlaces", "setReserved"]),
     ...mapActions(["fetchupdatePlaces"]),
     cancelActions: function() {
       let dataobj = [this.getReservedPlaceID, false, false];
       this.fetchupdatePlaces(dataobj);
       this.updatePlaces(dataobj);
+      this.setReserved;
     }
   },
   watch: {

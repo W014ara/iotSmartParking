@@ -1,3 +1,5 @@
+let BASE_URL = "https://gavnishe.tk/api/v1/parking"
+
 export default {
   state: {
     places: [
@@ -91,7 +93,7 @@ export default {
   actions: {
     async fetchPlaces(ctx) {
       const response = await fetch(
-        "http://9681133dccd8.ngrok.io/api/v1/parking",
+        BASE_URL,
         {
           method: "GET"
         }
@@ -105,7 +107,7 @@ export default {
         id: bodyData[0],
         occupied: bodyData[1]
       };
-      await fetch(`http://9681133dccd8.ngrok.io/api/v1/parking`, {
+      await fetch(BASE_URL, {
         method: "PUT",
         body: JSON.stringify(fetchobj)
       });
@@ -127,6 +129,10 @@ export default {
         }
       }
     },
+    setReserved(state){
+      state.reservedPlace = null
+    },
+
     createPlaces(state, result) {
       state.places = result;
     }
