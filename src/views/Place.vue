@@ -13,8 +13,8 @@
         }"
         v-for="item in this.getPlaces"
         :key="item.id"
-        v-bind:id="`placeID-${item.id}`"
-        v-on:click.prevent="currentId($event)"
+        v-bind:id="item.id"
+        v-on:click.prevent="getCurrentPlace($event)"
       >
         <h1 v-if="item.occupied === true">{{ item.id }}</h1>
         <div class="occupiedCar" v-else></div>
@@ -24,23 +24,32 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapMutations, mapActions } from "vuex";
 
 export default {
   computed: {
-    ...mapGetters(["getPageSize", "getPlaces"])
+    ...mapGetters(["getPlaces", "getReservedPlaceID"]),
   },
   methods: {
-    ...mapActions(["fetchPlaces", "reservePlace"]),
-    currentId: function(event) {
-      let block_class = event.currentTarget.getAttribute("class").split(" ");
-      if (block_class[1] === undefined) {
-        console.log(event.currentTarget.getAttribute("id").slice(-1));
+    ...mapMutations(["updatePlaces"]),
+    ...mapActions(["fetchPlaces", "fetchupdatePlaces"]),
+    getCurrentPlace(event){
+      if(this.getReservedPlaceID){
+        alert(`Вы уже заняли свое место под номером: ${this.getReservedPlaceID}`)
+      }else{
+        let currentid = +event.currentTarget.getAttribute('id');
+        let currentClassName = +event.currentTarget.getAttribute('class').split(" ");
+        if(currentClassName[1] === undefined){
+          let dataobj = [currentid, false, true];
+          this.fetchupdatePlaces(dataobj);
+          this.updatePlaces(dataobj);
+          this.$router.push({path: 'status'});
+        }
       }
     }
   },
-  async mounted() {
-    this.fetchPlaces();
+  mounted(){
+    this.fetchPlaces()
   }
 };
 </script>

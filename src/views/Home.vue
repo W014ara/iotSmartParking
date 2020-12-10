@@ -8,7 +8,7 @@
 <script>
 import MobileHome from "../components/Home/MobileHome";
 import DesktopHome from "../components/Home/DesktopHome";
-import { mapGetters } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 
 export default {
   components: {
@@ -17,6 +17,9 @@ export default {
   },
   computed: {
     ...mapGetters(["getPageSize"])
+  },
+  methods: {
+    ...mapMutations(["setNewUrl"])
   }
 };
 </script>

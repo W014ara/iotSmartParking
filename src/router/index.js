@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import ErrorPage from "../components/404.vue";
 import Home from "../views/Home.vue";
 import Place from "../views/Place.vue";
+import Status from "../components/Status.vue";
 
 Vue.use(VueRouter);
 
@@ -17,6 +18,12 @@ const routes = [
     path: "/place",
     name: "place",
     component: Place
+  },
+
+  {
+    path: "/status",
+    name: "status",
+    component: Status
   },
 
   {
