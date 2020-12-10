@@ -57,7 +57,7 @@ export default {
     ...mapMutations(["setNewUrl", "updatePlaces"]),
     ...mapActions(["fetchupdatePlaces"]),
     cancelActions: function(){
-      let dataobj = [this.getReservedPlaceID, true, false];
+      let dataobj = [this.getReservedPlaceID, false, false];
       this.fetchupdatePlaces(dataobj);
       this.updatePlaces(dataobj);
     }

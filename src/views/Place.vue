@@ -8,15 +8,15 @@
     <div class="places">
       <div
         v-bind:class="{
-          block: item.occupied === true,
-          'block reserved': item.occupied === false
+          block: item.occupied === false,
+          'block reserved': item.occupied === true
         }"
         v-for="item in this.getPlaces"
         :key="item.id"
         v-bind:id="item.id"
         v-on:click.prevent="getCurrentPlace($event)"
       >
-        <h1 v-if="item.occupied === true">{{ item.id }}</h1>
+        <h1 v-if="item.occupied === false">{{ item.id }}</h1>
         <div class="occupiedCar" v-else></div>
       </div>
     </div>
@@ -40,7 +40,7 @@ export default {
         let currentid = +event.currentTarget.getAttribute('id');
         let currentClassName = +event.currentTarget.getAttribute('class').split(" ");
         if(currentClassName[1] === undefined){
-          let dataobj = [currentid, false, true];
+          let dataobj = [currentid, true, true];
           this.fetchupdatePlaces(dataobj);
           this.updatePlaces(dataobj);
           this.$router.push({path: 'status'});

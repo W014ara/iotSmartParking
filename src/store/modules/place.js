@@ -3,87 +3,87 @@ export default {
     places: [
       {
         id:0,
-        "occupied":true
+        "occupied":false
       },
       {
         id:1,
-        "occupied":false
+        "occupied":true
       },
       {
         id:2,
-        "occupied":true
+        "occupied":false
       },
       {
         id:3,
-        "occupied":true
+        "occupied":false
       },
       {
         id:4,
-        "occupied":true
+        "occupied":false
       },
       {
         id:5,
-        "occupied":false
+        "occupied":true
       },
       {
         id:6,
-        "occupied":false
+        "occupied":true
       },
       {
         id:7,
-        "occupied":false
+        "occupied":true
       },
       {
         id:8,
-        "occupied":true
+        "occupied":false
       },
       {
         id:9,
-        "occupied":true
+        "occupied":false
       },
       {
         id:10,
-        "occupied":true
+        "occupied":false
       },
       {
         id:11,
-        "occupied":true
+        "occupied":false
       },
       {
         id:12,
-        "occupied":true
+        "occupied":false
       },
       {
         id:13,
-        "occupied":true
+        "occupied":false
       },
       {
         id:14,
-        "occupied":false
+        "occupied":true
       },
       {
         id:15,
-        "occupied":true
+        "occupied":false
       },
       {
         id:16,
-        "occupied":true
+        "occupied":false
       },
       {
         id:17,
-        "occupied":false
+        "occupied":true
       },
       {
         id:18,
-        "occupied":false
+        "occupied":true
       },
       {
         id:19,
-        "occupied":false
+        "occupied":true
       },
       {
         id:20,
-        "occupied":true
+        "occupied":false
       }
     ],
     reservedPlace: null
@@ -142,22 +142,3 @@ export default {
     }
   }
 };
-
-  // actions: {
-  //   async fetchPlaces(ctx) {
-  //     const response = await fetch(
-  //       "https://b70ac5186730.ngrok.io/api/v1/parking"
-  //     );
-  //     const res = await response.json();
-  //     ctx.commit("updatePlaces", res);
-  //   },
-
-  //   async reservePlace(ctx, param) {
-  //     await fetch(`https://b70ac5186730.ngrok.io/api/v1/parking/${param}`);
-  //   }
-  // },
-  // mutations: {
-  //   updatePlaces(state, result) {
-  //     state.places = result;
-  //   }
-  // },
