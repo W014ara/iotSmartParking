@@ -10,7 +10,7 @@ export default {
         ? (state.page__Size = "desktop")
         : (state.page__Size = "mobile");
     },
-    setNewUrl(state, url){
+    setNewUrl(state, url) {
       state.current_url = url;
     }
   },
@@ -18,7 +18,7 @@ export default {
     getPageSize(state) {
       return state.page__Size;
     },
-    getPageUrl(state){
+    getPageUrl(state) {
       return state.current_url;
     }
   }

@@ -28,28 +28,32 @@ import { mapGetters, mapMutations, mapActions } from "vuex";
 
 export default {
   computed: {
-    ...mapGetters(["getPlaces", "getReservedPlaceID"]),
+    ...mapGetters(["getPlaces", "getReservedPlaceID"])
   },
   methods: {
     ...mapMutations(["updatePlaces"]),
     ...mapActions(["fetchPlaces", "fetchupdatePlaces"]),
-    getCurrentPlace(event){
-      if(this.getReservedPlaceID){
-        alert(`Вы уже заняли свое место под номером: ${this.getReservedPlaceID}`)
-      }else{
-        let currentid = +event.currentTarget.getAttribute('id');
-        let currentClassName = +event.currentTarget.getAttribute('class').split(" ");
-        if(currentClassName[1] === undefined){
+    getCurrentPlace(event) {
+      if (this.getReservedPlaceID) {
+        alert(
+          `Вы уже заняли свое место под номером: ${this.getReservedPlaceID}`
+        );
+      } else {
+        let currentid = +event.currentTarget.getAttribute("id");
+        let currentClassName = +event.currentTarget
+          .getAttribute("class")
+          .split(" ");
+        if (currentClassName[1] === undefined) {
           let dataobj = [currentid, true, true];
           this.fetchupdatePlaces(dataobj);
           this.updatePlaces(dataobj);
-          this.$router.push({path: 'status'});
+          this.$router.push({ path: "status" });
         }
       }
     }
   },
-  mounted(){
-    this.fetchPlaces()
+  mounted() {
+    this.fetchPlaces();
   }
 };
 </script>
