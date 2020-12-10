@@ -70,7 +70,6 @@ export default {
   watch: {
     $route(to) {
       this.setNewUrl(to.name);
-      console.log(this.getPageUrl);
     }
   }
 };

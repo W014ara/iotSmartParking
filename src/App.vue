@@ -27,14 +27,16 @@ export default {
     ...mapMutations(["changePageSize", "setReserved"]),
     ...mapActions(["fetchPlaces"])
   },
-  created(){
+  created() {
     setInterval(() => {
-      this.fetchPlaces()
-      console.log(this.getReservedPlaceID);
-      if(this.getReservedPlaceID !== null){
-        for(let elem of this.getPlaces){
-          if((+elem.id === +this.getReservedPlaceID) && (elem["occupied"] === false)){
-            this.setReserved()
+      this.fetchPlaces();
+      if (this.getReservedPlaceID !== null) {
+        for (let elem of this.getPlaces) {
+          if (
+            +elem.id === +this.getReservedPlaceID &&
+            elem["occupied"] === false
+          ) {
+            this.setReserved();
           }
         }
       }

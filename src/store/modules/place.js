@@ -1,4 +1,4 @@
-let BASE_URL = "https://gavnishe.tk/api/v1/parking"
+let BASE_URL = "https://gavnishe.tk/api/v1/parking";
 
 export default {
   state: {
@@ -92,12 +92,9 @@ export default {
   },
   actions: {
     async fetchPlaces(ctx) {
-      const response = await fetch(
-        BASE_URL,
-        {
-          method: "GET"
-        }
-      );
+      const response = await fetch(BASE_URL, {
+        method: "GET"
+      });
       const res = await response.json();
       ctx.commit("createPlaces", res);
     },
@@ -129,10 +126,9 @@ export default {
         }
       }
     },
-    setReserved(state){
-      state.reservedPlace = null
+    setReserved(state) {
+      state.reservedPlace = null;
     },
-
     createPlaces(state, result) {
       state.places = result;
     }
